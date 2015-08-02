@@ -1,0 +1,31 @@
+<%= flash[:message] %>
+
+<h1>Articles</h1>
+
+<p><a href="/new_article">Add a New Article</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Post</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @articles.each do |article| %>
+    <tr>
+          <td><%= article.name %></td>
+          <td><%= article.post %></td>
+          <td><a href="/articles/<%= article.id %>">Show</a>
+        </td>
+      <td><a href="/articles/<%= article.id %>/edit">Edit</a></td>
+      <td><a href="/articles/<%= article.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
