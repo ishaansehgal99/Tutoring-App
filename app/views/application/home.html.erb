@@ -1,8 +1,10 @@
 
 <div class = "container">
 <div class="jumbotron">
-  <h1>Hello, World</h1>
+  <h1>Hello, <%if logged_in? %> <%=@current_user.name.capitalize%> <%else%>World! <%end%></h1>
   <p>We want you to succeed! Math will change the world. Accompany us and learn how to shape tommorrow.</p>
+
+
 
 </div>
 

@@ -15,19 +15,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div id = "wrapper">
   <div id ="container">
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
   
-  <div id ="user_header">
+  <div id ="content">
     <div class = "spaceleft">
     <%= link_to "Home", root_url %> |
     
     
       <% if logged_in? %>
       
-      <b>Welcome <%=@current_user.name %>!</b> |
+      <b>Welcome <%=@current_user.name.capitalize %>!</b> |
       <a href = "/users/<%=@current_user.id%>/edit">Edit User</a> |
        <%= link_to "Dashboard", start_path %> |
       <%= link_to "Log out", session_path(:id), method: :delete %><br /> 
@@ -41,8 +42,20 @@
     </div>
     </div>
     
+  
+       <div class='push'></div>
+    
+    <div id='footer'>
+      <p>Copyright &copy; 2016 
+      Ishaan Sehgal, Ellis Sawyer, Kartik Sarangmath, and Rohan Katakam</p>
+    </div>
+  
+   
+</div>
+
 
 <%= yield %>
   </div>
 </body>
 </html>
+

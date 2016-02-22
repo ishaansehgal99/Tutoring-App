@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   add_flash_types :success, :warning, :danger, :info
   def home
+    
+    @current_user ||= User.find_by(id: session[:user_id])
+  
     render 'home'
   end
    def start 

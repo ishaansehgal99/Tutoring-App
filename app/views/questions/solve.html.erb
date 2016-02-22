@@ -1,14 +1,12 @@
 <div class = "container">
 
-  
- 
-  
      <div class="jumbotron">
       <tr> 
+     <!-- sets up question layout--->
       <h1><%= @question.name %> </h1><br />
       
       <h3> Question #<%=@question.id%></h3> <br />
-      
+     
         <td><h4><%= @question.description %></h4></td>
                 
       
@@ -20,84 +18,98 @@
         
       
       
-      
-      <% if (@question.id==1)%>
+      <!-- checks user answer and what question they are on -->
+      <% if (@question.id ==1)%>
 <script>
-
-}
-
+// question 1 
 function outputname() {
 var x,y;
+//global varible score that increments 100 if answer is right
 score = 0;
 x=document.getElementById("form");
 y=x.elements["name"].value;
+
+
 if (y==15){
 document.getElementById("demo").innerHTML=y +" Is correct!" +"<br>";
 score = score +  100;
 document.getElementById("result").innerHTML ="Your score: " + score;
 
 }
+//if  user answers incorrectly they get deducted 50 points
+
 else {
+    score = score -50;
     document.getElementById("demo").innerHTML=y +" Is incorrect!" +"<br>";
     document.getElementById("result").innerHTML ="Your score: " + score;
+    document.getElementById("help").innerHTML ="The correct answer is: 15 to get the answer you subtract 5 from the 20 cookies the cookie monster stole from you.";
 }
 }
 
 </script>
        
+       <!--everything that is being printed fits in these ids-->
        
         <p id = "demo"></p> 
         <p id="result"></p>
+        <p id="help"></p>
         <p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>
      <%end%> 
     
      
      
      
+     <!-- checks answers for question 2 -->
      
      <% if (@question.id ==2)%>
      <p id = "hint"> The answer is yes or no!</p>
 <script>
     
-
+//question 2
 function outputname() {
 var x,y;
 score1 = 0;
+ //z is grabs the form: question layout 
 x=document.getElementById("form");
+//y grabs the answer input from the user-->
+
 y=x.elements["name"].value;
+
+//if user answers correctly the user gains 100 poinsts 
 if (y.toString() == "yes"){
 document.getElementById("demo").innerHTML=y +" Is correct!" +"<br>";
+<!-- 100 points gets added to final score -->
 score1  = score + 100;
 document.getElementById("result").innerHTML =
     "Your score: " + score1;
 document.getElementById("next").style.visibility = 'visible';
 
 }
-
+//if  user answers incorrectly they get deducted 50 points-->
 else{
-    
+    score1  = score -50;
     document.getElementById("demo").innerHTML =y+" Is incorrect!" + "<br>"; 
-    document.getElementById("result").innerHTML =
-    "Your score: " + score1; 
+    document.getElementById("result").innerHTML = "Your score: " + score1;
+    document.getElementById("help").innerHTML ="The correct answer is:Yes. If perry has 2 hours to go 6 miles and he is going three miles an hour he can be there in time because 3X2=6";
 }
 }
 
 </script>
 
       
-        <p id = "demo"> </p> 
-        <p id="result"> </p>
-<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>     <%end%> 
+        <p id = "demo"></p> 
+        <p id="result"></p>
+<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>    
+   <p id="help"></p>  
      
-     
-     
+      <%end%> 
      
      
      
        <% if (@question.id == 3)%>
 <script>
     
-
+//question 3
 function outputname() {
 var x,y;
 score2 = 0;
@@ -113,9 +125,11 @@ document.getElementById("next").style.visibility = 'visible';
 }
 
 else{
+    score2 = score1 - 50;
        document.getElementById("demo").innerHTML =y+" Is incorrect!" + "<br>";
 document.getElementById("result").innerHTML =
     "Your score: " + score2;
+document.getElementById("help").innerHTML ="The correct answer is: 18 to get the answer you add 5 meters to the 13 meters.";
     
 }
 }
@@ -125,13 +139,13 @@ document.getElementById("result").innerHTML =
        
         <p id = "demo"> </p> 
         <p id="result"> </p>
-<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>     <%end%> 
-     
-     
+<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>     
+     <p id="help"></p>
+     <%end%> 
         <% if (@question.id ==4)%>
 <script>
     
-
+//question 4
 function outputname() {
 var x,y;
 score3 = 0;
@@ -148,10 +162,11 @@ document.getElementById("next").style.visibility = 'visible';
 }
 
 else{
-    
+    score3 = score2 - 50;
     document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";  
     document.getElementById("result").innerHTML =
     "Your score: " + score3;
+document.getElementById("help").innerHTML ="The correct answer is: 242 to get the answer you multiple 18 and 22 to 396 then you subtract 7 X 22, because there are 30 days in a month and 8 of those days are not school days so Jimmy is left with 22 days.";
 }
 }
 
@@ -168,7 +183,7 @@ else{
         <% if (@question.id == 5)%>
 <script>
     
-
+//question 5
 function outputname() {
 var x,y;
  score4 = 0;
@@ -176,7 +191,7 @@ x=document.getElementById("form");
 y=x.elements["name"].value;
 if (y ==8){
 document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
-score4  = score4 + 100;
+score4  = score3 + 100;
 document.getElementById("result").innerHTML =
     "Your score: " + score3;
 document.getElementById("next").style.visibility = 'visible';
@@ -184,20 +199,22 @@ document.getElementById("next").style.visibility = 'visible';
 }
 
 else{
-    
+    score4 = score3 - 50;
     document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>"; 
     document.getElementById("result").innerHTML =
     "Your score: " + score4;
+    document.getElementById("help").innerHTML = "The correct answer is: 8 to get the answer you divide 189 by 3 to get the avergave amount of rungs climbed which gives you 63 then you divide the left over rungs by 63: 504/63 = 8.";
+
 }
 }
 
 </script>
 
         
-        <p id = "demo"> </p> 
-        <p id="result"> </p>
+        <p id = "demo"></p> 
+        <p id="result"></p>
 <p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>     <%end%> 
-     
+     <p id ="help"></p>
      
      
         <% if (@question.id == 6)%>
@@ -208,23 +225,24 @@ else{
 function outputname() {
 var x,y;
  score5 = 0;
+ //question 6
 x=document.getElementById("form");
 y=x.elements["name"].value;
-if (y ==5){
+if (y ==14){
 document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
 score5 = score4 + 100;
 document.getElementById("result").innerHTML =
     "Your score: " + score5;
 document.getElementById("next").style.visibility = 'visible';
-
-
 }
 
 else{
-    
+    score5 = score4 - 50;
     document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";
     document.getElementById("result").innerHTML =
     "Your score: " + score5;
+    document.getElementById("help").innerHTML ="The correct answer is: 14 minutes to get the answer you divide 16 by 4 to give you 4, then you you divide 90 by 5 to get a fifth which is 18 then you multiply that by 4 to get 4/5 of the tub wich give you 72 gallons then you, you subtract 72 by 16 to give you 56 then you finally divide 56 by 4 gallons giving you 14 minutes. .";
+
 }
 }
 
@@ -232,17 +250,235 @@ else{
 
         <p id = "demo"> </p> 
         <p id="result"> </p>
-<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>     <%end%> 
-     
-     
-     
-     
-      </tr>
-      
-      
-      
-     
-      
-     </div>
+<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>     
+<p id "help"></p>
+<%end%> 
 
+
+ <% if (@question.id == 7)%>
+        <p id="hint"> Round to the nearest minute!</p>
+<script>
+    
+
+function outputname() {
+var x,y;
+ score6 = 0;
+ 
+ //question 7
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y == 16){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score6 = score5 + 100;
+document.getElementById("result").innerHTML =
+    "Your score: " + score6;
+document.getElementById("next").style.visibility = 'visible';
+
+
+}
+
+else{
+    score6 = score5 -50;
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";
+    document.getElementById("result").innerHTML =
+    "Your score: " + score6;
+    document.getElementById("help").innerHTML ="The correct answer is: 16 to get the answer you subtract 8 pounds from 80 pounds to get 72 pounds.  Then divide 72 pounds by 4.5 pounds to get 16 weeks.";
+
+}
+}
+
+</script>
+
+        <p id = "demo"></p> 
+        <p id="result"></p>
+<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>  
+<p id="help"> </p>
+<%end%>
+
+<% if (@question.id == 8)%>
+        <p id="hint"> Round to the nearest minute!</p>
+<script>
+    
+//question 8
+function outputname() {
+var x,y;
+ score7 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y ==54){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score7 = score6 + 100;
+document.getElementById("result").innerHTML =
+    "Your score: " + score7;
+document.getElementById("next").style.visibility = 'visible';
+
+
+}
+
+else{
+    score7 = score6 - 50;
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";
+    document.getElementById("result").innerHTML =
+    "Your score: " + score7;
+        document.getElementById("help").innerHTML ="The correct answer is: 54 to get the answer you divide 126 pounds by 7 to get 18 pounds.  Then you multuiply 3 and 18 pounds to get 54 pounds.";
+
+}
+}
+
+</script>
+
+        <p id = "demo"></p> 
+        <p id="result"></p>
+<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>
+<p id="help"></p>
+<%end%>
+
+<% if (@question.id == 9)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+ score8 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y == 21101){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score8 = score7 + 100;
+document.getElementById("result").innerHTML =
+    "Your score: " + score8;
+document.getElementById("next").style.visibility = 'visible';
+
+
+}
+
+else{
+    score8 = score7 - 50;
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";
+    document.getElementById("result").innerHTML =
+    "Your score: " + score8;
+            document.getElementById("help").innerHTML ="The correct answer is: 21101 to get the answer you multiply 1, pi, and 2 using the circumference formula, which is 6.28 feet.  Then multiply 6.28 feet by 40 to get how many feet traveled in one minute, which is 251.2.  Then multiply 7 by 251.1 to get how far traveled in 7 minutes, which is 1758.4 feet.  Then multiply that by 12 to convert to inches and the answer is 21100.8.";
+
+}
+}
+
+</script>
+
+        <p id = "demo"></p> 
+        <p id="result"></p>
+<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p> 
+<p id="help"></p>
+<%end%>
+<% if (@question.id == 10)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+ score9 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y ==105){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score9 = score8 + 100;
+document.getElementById("result").innerHTML =
+    "Your score: " + score9;
+document.getElementById("next").style.visibility = 'visible';
+
+
+}
+
+else{
+    score9 = score8 - 50;
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";
+    document.getElementById("result").innerHTML =
+    "Your score: " + score9;
+     document.getElementById("help").innerHTML ="The correct answer is: 105 to get the answer you divide 189 students by 9 to get 21 students.  Since 4/9 of the students are boys, 5/9 of the students are girls.  Multiply 21 students by 5 to get 105 students.";
+
+}
+}
+
+</script>
+
+        <p id = "demo"></p> 
+        <p id="result"></p>
+<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>
+<p id="help"></p>
+<%end%>
+<% if (@question.id == 11)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+ score10 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y ==4){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score10 = score9 + 100;
+document.getElementById("result").innerHTML =
+    "Your score: " + score10;
+document.getElementById("next").style.visibility = 'visible';
+
+
+}
+
+else{
+    score10 = score9 - 50;
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";
+    document.getElementById("result").innerHTML =
+    "Your score: " + score10;
+     document.getElementById("help").innerHTML ="The correct answer is: 4 to get the answer you multiply 25 dollars by 0.2 to get 20 dollars.  Then you multiply 20 dollars by 0.8 to get 4 dollars";
+
+}
+}
+
+</script>
+
+        <p id = "demo"></p> 
+        <p id="result"></p>
+<p id= "next"><a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a></p>   
+<p id="help"></p>
+<%end%>
+<% if (@question.id == 12)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+ score11 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y ==12150){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score11 = score10 + 100;
+document.getElementById("result").innerHTML =
+    "Your score: " + score10;
+document.getElementById("next").style.visibility = 'visible';
+
+
+}
+
+else{
+    score11 = score10 - 50;
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";
+    document.getElementById("result").innerHTML =
+    "Your score: " + score11;
+     document.getElementById("help").innerHTML ="The correct answer is: 12150 to get the answer you multiply 60 yards and 45 yards by 3 to convert those values into feet, which are 180 feet and 135 feet.  Then multiply 180 feet and 135 feet to get 24300 feet squared.  Then divide that value by 2 to get 12150 feet squared.";
+
+}
+}
+
+</script>
+
+        <p id = "demo"></p> 
+        <p id="result"></p>
+<p id="help"></p>
+<%end%>
+<noscript>Your browser does not support JavaScript!</noscript>
+
+      </tr>
+
+     </div>
 </div>
