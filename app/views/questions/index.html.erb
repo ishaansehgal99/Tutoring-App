@@ -1,0 +1,28 @@
+<h1>Questions!</h1>
+
+<p><a href="/questions/new">Post a Question!</a></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr> 
+        <td><%= question.name %></td> 
+        <td><a href = "/questions/<%= question.id %>">Show</a></td> 
+        <td><a href = "/questions/<%= question.id %>/edit">Edit</a></td>
+        <!--Should only be available to admin or those who know url. 
+        <td><a href="/question/<#%= question.id %>/edit">Edit</a></td>-->
+        <!--<td><a href="/question/<#%= question.id %>/destroy">Destroy</a></td>-->
+        
+      
+      </tr>
+   <% end %>
+  </tbody>
+</table>

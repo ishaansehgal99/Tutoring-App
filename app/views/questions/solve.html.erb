@@ -1,0 +1,217 @@
+
+<div class = "container">
+
+  
+ 
+  
+     <div class="jumbotron">
+      <tr> 
+      <h1><%= @question.name %> </h1><br />
+      
+      <h3> Question #<%=@question.id%></h3> <br />
+      
+        <td><h4><%= @question.description %></h4></td>
+                
+      
+        <form id = "form">
+        <input name = "name" type ="text" placeholder = "Answer"/>
+        <button type = "button" onclick="outputname()">Check</button>
+         </form>
+         <br />
+        
+      
+      
+      
+      <% if (@question.id==1)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+var score = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y==15){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score = (score + 1) *100;
+
+}
+else {
+    document.getElementById("demo").innerHTML=y +" is incorrect!" +"<br>";
+    
+}
+}
+
+</script>
+       
+        <p id = "demo"> </p> 
+        
+     <%end%> 
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <% if (@question.id ==2)%>
+     <p id = "hint"> The answer is yes or no!</p>
+<script>
+    
+
+function outputname() {
+var x,y;
+var score1 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y.toString() == "yes"){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score1  = (score1 + 1) *100;
+}
+else{
+    
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";  
+}
+}
+
+</script>
+
+        <p id = "demo"> </p> 
+        
+     <%end%> 
+     
+     
+     
+     
+     
+     
+       <% if (@question.id == 3)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+var score2 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y ==18){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score2  = (score2 + 1) *100;
+}
+else{
+    
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";  
+}
+}
+
+</script>
+
+        <p id = "demo"> </p> 
+        
+     <%end%> 
+     
+     
+        <% if (@question.id ==4)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+var score3 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y ==242){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score3  = (score3 + 1) *100;
+}
+else{
+    
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";  
+}
+}
+
+</script>
+
+        <p id = "demo"> </p> 
+        
+     <%end%> 
+     
+     
+     
+     
+     
+        <% if (@question.id == 5)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+var score4 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y ==8){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score4  = (score4 + 1) *100;
+}
+else{
+    
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";  
+}
+}
+
+</script>
+
+        <p id = "demo"> </p> 
+        
+     <%end%> 
+     
+     
+     
+        <% if (@question.id == 6)%>
+<script>
+    
+
+function outputname() {
+var x,y;
+var score5 = 0;
+x=document.getElementById("form");
+y=x.elements["name"].value;
+if (y ==18){
+document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
+score6  = (score5 + 1) *100;
+}
+else{
+    
+    document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";  
+}
+}
+
+</script>
+
+        <p id = "demo"> </p> 
+        
+     <%end%> 
+     
+     
+      </tr>
+      
+      
+      
+      
+      <% if @question.id - 1 >0 %>
+      <a href = "/questions/<%=@question.id - 1 %>/solve" ><button type="button">Previous</button></a>
+      <%end%>
+      
+       <% if @question.id + 1 < 7 %>
+               
+               <a href = "/questions/<%=@question.id + 1 %>/solve" ><button type="button">Next</button></a>
+         
+      <% end%>
+      
+     </div>
+   
+
+ 
+</div>

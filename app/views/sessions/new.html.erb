@@ -1,5 +1,6 @@
+<div class = "container">
 <h1> Log In </h1>
-<%=flash[:message]%>
+<%=flash[:warning]%>
 <%= form_tag sessions_path do %> 
 <div class ="field">
   
@@ -9,7 +10,8 @@
 <div class="field">
   <%= label_tag :password %> <br /> 
   <%= password_field_tag :password %> 
-</div>
+</div> <br /> 
 <div class="actions"> <%= submit_tag "Log in" %> </div>
 
 <%end%> 
+</div>

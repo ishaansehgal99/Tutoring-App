@@ -1,0 +1,16 @@
+<div class = "container">
+<h1> Add a Question</h1>
+<%= form_tag questions_path do %> 
+<div class ="field">
+  
+  <%= label_tag :name %> <br /> 
+  <%= text_field_tag :name, params[:name] %>
+</div>
+<div class="field">
+  <%= label_tag :description %> <br /> 
+  <%= text_area_tag :description %> 
+</div> <br /> 
+<div class="actions"> <%= submit_tag "Submit" %> </div>
+
+<%end%> 
+</div>
