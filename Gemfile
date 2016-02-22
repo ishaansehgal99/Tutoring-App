@@ -2,8 +2,19 @@ source 'https://rubygems.org'
 gem 'starter_generators', :git => 'https://github.com/arjunvenkat/starter_generators.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
+
+
 # Use POSTGRESS
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
