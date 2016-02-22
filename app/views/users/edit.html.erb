@@ -1,22 +1,17 @@
-<div class = "container">
-  <h2 class="form-signin-heading"> Join us!</h2>
-<%= form_for @user do |f| %>
-<% if @user.errors.any? %>
-  <div class ="error_messages">
-    <h2> Form is invalid </h2>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-      <li> <%=message%></li>
-      <% end %>
-    </ul>  
-</div>
-<%end%>
+<h1>Edit your profile</h1>
 
-<div class ="field">
+<div class="row">
+  <div class="col-md-3 col-md-offset-1">
+    <%= form_for @user do |f| %>
+     
+
+      
   <div class ="field">
       <%= f.label :name %><br />
       <%= f.text_field :name%>
     </div>
+    
+    <div class ="field">
   <%= f.label :email %> <br />
   <%= f.text_field :email %>
 </div>
@@ -35,4 +30,3 @@
 <div class ="actions"><%=f.submit%> </div>
 
 <%end %>
-</div>

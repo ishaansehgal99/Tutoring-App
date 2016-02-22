@@ -1,16 +1,19 @@
-<div class = "container">
-<h1> Edit a Question</h1>
-<%= form_tag questions_path do %> 
-<div class ="field">
-  
-  <%= label_tag :name %> <br /> 
-  <%= text_field_tag :name, params[:name] %>
-</div>
-<div class="field">
-  <%= label_tag :description %> <br /> 
-  <%= text_area_tag :description %> 
-</div> <br /> 
-<div class="actions"> <%= submit_tag "Submit" %> </div>
+<h1>Edit your Question</h1>
 
-<%end%> 
-</div>
+<div class="row">
+  <div class="col-md-3 col-md-offset-1">
+    <%= form_for @question do |f| %>
+     
+  <div class ="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name%>
+    </div>
+    
+    <div class ="field">
+  <%= f.label :description %> <br />
+  <%= f.text_area :description %>
+</div><br />
+
+<div class ="actions"><%=f.submit%> </div>
+
+<%end %>

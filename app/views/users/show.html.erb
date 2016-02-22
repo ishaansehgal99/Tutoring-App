@@ -1,0 +1,15 @@
+<h1>User #<%=@user.id%></h1>
+<div class = "container"/> 
+<div>
+  <strong>Name</strong>:<br />
+  <p><%= @user.name %></p>
+</div>
+<div>
+  <b>Email</b>
+<p><%= @user.email %></p>
+  </div>
+<a href="/users/<%= @user.id %>/edit">Edit</a> |
+<a href="/users/<%= @user.id %>/destroy">Destroy</a>
+  
+
+</div>

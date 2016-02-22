@@ -1,10 +1,20 @@
 class QuestionsController < ApplicationController
   def solve
    @question = Question.find_by_id(params["id"])
-   
-   
     render 'solve'
   end 
+  
+  def edit 
+    @question = Question.find(params[:id])
+  end
+   def update 
+    @question = Question.find(params[:id])
+    if @question.update_attributes(question_params)
+      redirect_to "/questions/#{@question.id}"
+    else
+      render 'edit'
+    end
+  end
     def show
     @question = Question.find_by_id(params["id"])
     end
@@ -25,31 +35,22 @@ class QuestionsController < ApplicationController
     end
   end
   
-  def edit
-    @question = Question.find_by(id: params[:id])
-  end
   
   def index
     @questions = Question.all
   end
   
-  def update 
-    @question = Question.find_by(id: params[:id])
-    @question.name = params[:name]
-    @user.description = params[:description]
-    
-    if @question.save
-      redirect_to "/question/#{@question.id}"
-    else
-      render 'edit'
-    end
-  end
   
   def destroy
     @question = Question.find_by_id(params['id'])
     @question.destroy
     redirect_to "/questions"
   end
+  
+  private
+   def question_params
+      params.require(:question).permit(:name, :description)
+    end
   
   
 end

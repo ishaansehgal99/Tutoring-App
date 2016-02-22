@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SignInPractice</title>
+  <title>Tutoring App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -27,7 +27,8 @@
     
       <% if logged_in? %>
       
-      <b>Welcome <%=@current_user.email %>!</b> |
+      <b>Welcome <%=@current_user.name %>!</b> |
+      <a href = "/users/<%=@current_user.id%>/edit">Edit User</a> |
        <%= link_to "Dashboard", start_path %> |
       <%= link_to "Log out", session_path(:id), method: :delete %><br /> 
      
