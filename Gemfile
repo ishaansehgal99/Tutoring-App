@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gem 'starter_generators', :git => 'https://github.com/arjunvenkat/starter_generators.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
+# Use POSTGRESS
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
