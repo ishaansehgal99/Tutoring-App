@@ -25,24 +25,25 @@
 function outputname() {
 var x,y;
 //global varible score that increments 100 if answer is right
-score = 0;
+// score = 0;
 x=document.getElementById("form");
 y=x.elements["name"].value;
 
 
 if (y==15){
 document.getElementById("demo").innerHTML=y +" Is correct!" +"<br>";
-score = score +  100;
+// score = score +  100;
 document.getElementById("result").innerHTML ="Your score: " + score;
 
 }
 //if  user answers incorrectly they get deducted 50 points
 
 else {
-    score = score -50;
+    // score = score -50;
     document.getElementById("demo").innerHTML=y +" Is incorrect!" +"<br>";
-    document.getElementById("result").innerHTML ="Your score: " + score;
+    document.getElementById("result").innerHTML ="  Don't worry this question is just practice!";
     document.getElementById("help").innerHTML ="The correct answer is: 15 to get the answer you subtract 5 from the 20 cookies the cookie monster stole from you.";
+    
 }
 }
 
@@ -64,6 +65,13 @@ else {
      
      <% if (@question.id ==2)%>
      <p id = "hint"> The answer is yes or no!</p>
+     
+    
+     
+     
+     
+     
+     
 <script>
     
 //question 2
@@ -79,16 +87,16 @@ y=x.elements["name"].value;
 //if user answers correctly the user gains 100 poinsts 
 if (y.toString() == "yes"){
 document.getElementById("demo").innerHTML=y +" Is correct!" +"<br>";
-<!-- 100 points gets added to final score -->
-score1  = score + 100;
-document.getElementById("result").innerHTML =
-    "Your score: " + score1;
+score1  = score1 + 100;
+document.getElementById("result").innerHTML ="Your score: " + score1;
 document.getElementById("next").style.visibility = 'visible';
+
+
 
 }
 //if  user answers incorrectly they get deducted 50 points-->
 else{
-    score1  = score -50;
+    score1  = score1 -50;
     document.getElementById("demo").innerHTML =y+" Is incorrect!" + "<br>"; 
     document.getElementById("result").innerHTML = "Your score: " + score1;
     document.getElementById("help").innerHTML ="The correct answer is:Yes. If perry has 2 hours to go 6 miles and he is going three miles an hour he can be there in time because 3X2=6";
@@ -319,7 +327,6 @@ document.getElementById("result").innerHTML =
     "Your score: " + score7;
 document.getElementById("next").style.visibility = 'visible';
 
-
 }
 
 else{
@@ -327,7 +334,7 @@ else{
     document.getElementById("demo").innerHTML =y+" is incorrect!" + "<br>";
     document.getElementById("result").innerHTML =
     "Your score: " + score7;
-        document.getElementById("help").innerHTML ="The correct answer is: 54 to get the answer you divide 126 pounds by 7 to get 18 pounds.  Then you multuiply 3 and 18 pounds to get 54 pounds.";
+        document.getElementById("help").innerHTML ="The correct answer is: 54 to get the answer you divide 126 pounds by 7 to get 18 pounds.  Then you multiply 3 and 18 pounds to get 54 pounds.";
 
 }
 }
@@ -453,21 +460,46 @@ else{
 <p id="help"></p>
 <%end%>
 <% if (@question.id == 12)%>
-<script>
-    
 
+<!--Images to use. Display:none. Currently not working-->
+<!--<img id="bronze" width="220" height="277" src="/assets/Bronze.png" alt="Bronze Badge" class ="nodisplay" />-->
+<!--<img id="silver" width="220" height="277" src="/assets/Silver.png" alt="Silver Badge" class ="nodisplay"/>-->
+<!--<img id="gold" width="220" height="277" src="/assets/Gold.png" alt="Gold Badge" class ="nodisplay"/>-->
+<!--<img id="diamond" width="220" height="277" src="/assets/Diamond.png" alt="Diamond Badge" class ="nodisplay"/>-->
+<!--<img id="platinum" width="220" height="277" src="/assets/Platinum.png" alt="Platinum Badge" class ="nodisplay"/>-->
+
+<!--Canvas to Render. Currently not working-->
+<!--<p>Your Badge:</p>-->
+<!--<canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">-->
+<!--Your browser does not support the HTML5 canvas tag.-->
+<!--</canvas>-->
+
+
+
+<script>
 function outputname() {
 var x,y;
  score11 = 0;
 x=document.getElementById("form");
 y=x.elements["name"].value;
+
 if (y ==12150){
 document.getElementById("demo").innerHTML=y +" is correct!" +"<br>";
 score11 = score10 + 100;
 document.getElementById("result").innerHTML =
-    "Your score: " + score10;
+    "Your score: " + score11;
+    
 document.getElementById("next").style.visibility = 'visible';
 
+
+// window.onload = function(){
+    
+//      document.getElementById("demo").innerHTML=y +" You have a bronze badge" +"<br>";
+//     var c = document.getElementById("myCanvas");
+//     var ctx = c.getContext("2d");
+//     var img = document.getElementById("bronze");
+//     ctx.drawImage(img, 10, 10);
+//     }
 
 }
 
@@ -479,9 +511,43 @@ else{
      document.getElementById("help").innerHTML ="The correct answer is: 12150 to get the answer you multiply 60 yards and 45 yards by 3 to convert those values into feet, which are 180 feet and 135 feet.  Then multiply 180 feet and 135 feet to get 24300 feet squared.  Then divide that value by 2 to get 12150 feet squared.";
 
 }
-}
+
+
+
+    // Score system is not working! !important
+    //window.onload = function(){
+    // if (score11 >= -300 && score11 < 150){
+    //  document.getElementById("demo").innerHTML=y +" You have a silver badge" +"<br>";
+    // var c = document.getElementById("myCanvas");
+    // var ctx = c.getContext("2d");
+    // var img = document.getElementById("scream");
+    // ctx.drawImage(img, 10, 10);
+    // }
+    // if (score11 >= 150 && score11 < 600){
+    //  document.getElementById("demo").innerHTML=y +" You have a gold badge" +"<br>";
+    // var c = document.getElementById("myCanvas");
+    // var ctx = c.getContext("2d");
+    // var img = document.getElementById("scream");
+    // ctx.drawImage(img, 10, 10);
+    // }
+    // if (score11 >= 600 && score11 < 900){
+    //  document.getElementById("demo").innerHTML=y +" You have a diamond badge" +"<br>";
+    // var c = document.getElementById("myCanvas");
+    // var ctx = c.getContext("2d");
+    // var img = document.getElementById("scream");
+    // ctx.drawImage(img, 10, 10);
+    // }
+    // if (score11 >= 900 && score11 < 1200){
+    //  document.getElementById("demo").innerHTML=y +" You have a platinum badge" +"<br>";
+    // var c = document.getElementById("myCanvas");
+    // var ctx = c.getContext("2d");
+    // var img = document.getElementById("scream");
+    // ctx.drawImage(img, 10, 10);
+    //}
+    }
 
 </script>
+
 
         <p id = "demo"></p> 
         <p id="result"></p>
