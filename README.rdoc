@@ -1,28 +1,10 @@
-== README
+1.       23-0131-0014     Rohan Katakam
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2.       23-0131-0007     Ellis Sawyer
 
-Things you may want to cover:
+3.       23-0131-0008     Ishaan Sehgal
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4.       23-0131-0005     Kartik Sarangmath
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Our web application is directed to 6th graders that are interested in math.  When first entering the website, the student is welcomed by the home page which includes a greeting.  From here, the student can either sign up for an account, or log in to an existing account.  When signing up, a name, email, password, and password confirmation are required.  Once these things are put in, the student can create the user and continue on to the dashboard.  In the dashboard, the student can press the blue button to receive the first question.  The first question is a practice question to test if the student can work with the interface.  After completing this question, the student can check whether the answer was right or wrong, get an explanation if their answer was incorrect, and move on to the next question.  For the questions after, the student will receive a score.  If the student checks the answer and it is right, they will receive 100 points.  However if they check the answer and it is wrong, they will be penalized by 50 points.  The student can check their answer an unlimited amount of times, but if it is wrong each time, they will lose 50 points for each attempt.  After completing a question, the student can move on to the next question and their score will continue.  During this time, the user can always navigate between the dashboard, the home page, and the edit user tab.  In the edit user tab, the student can change his email, name and password.  Once the student is done using the services of the website, they can log out and log back in the next time they want to use the service.
